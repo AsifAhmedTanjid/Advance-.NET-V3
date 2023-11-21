@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Assignments";
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+}
+
+<h2>Assignments</h2>
+<table class="table table-bordered">
+
+    <tr>
+        <th>Restaurant Name </th>
+        <th>Restaurant Location</th>
+        <th>Requested At</th>
+        <th>Assigned At</th>
+        <th>Max Preservation Time</th>
+        <th>Contact Person</th>
+        <th>Contact Number</th>
+        <th>Email</th>
+        <th>Action</th>
+    </tr>
+    @foreach (var a in Model)
+    {
+        <tr text-align: center;>
+
+            <td>@a.Request.Restaurant.RestaurantName</td>
+            <td>@a.Request.Restaurant.RestaurantLocation</td>
+            <td>@a.Request.RequestTime</td>
+            <td>@a.AssignmentTime</td>
+            <td>@a.Request.MaxPreservationTime</td>
+           
+            <td>@a.Request.Restaurant.RestaurantContactPerson</td>
+            <td>@a.Request.Restaurant.RestaurantContactNumber</td>
+            <td>@a.Request.Restaurant.RestaurantEmail</td>
+            <td> <a href="/employee/Distributed/@a.AssignmentID" class="btn btn-primary">Distributed</a> </td>
+
+
+        </tr>
+    }
+</table>

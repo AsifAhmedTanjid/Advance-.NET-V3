@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "ShowAllAssignments";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>ShowAllAssignments</h2>
+
+<table class="table table-bordered">
+
+    <tr>
+        <th>Assignemnt ID</th>
+        <th>Employee Name</th>
+        <th>Restaurant </th>
+        <th>Assignment Time</th>
+        <th>Assignment Status</th>
+    </tr>
+    @foreach (var a in Model)
+    {
+        <tr text-align: center;>
+            <td>@a.AssignmentID</td>
+            <td>@a.User.Name</td>
+            <td>@a.Request.Restaurant.RestaurantName</td>
+            <td>@a.AssignmentTime</td>
+            <td>@a.Status</td>
+
+
+        </tr>
+    }
+</table>

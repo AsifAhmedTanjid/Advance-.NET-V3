@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewBag.Title = "SignUp";
+    Layout = "~/Views/Shared/_RegistrationLayout.cshtml";
+}
+
+
+
+<center>
+    <form action="" method="post">
+
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" name="Name" class="form-control" placeholder="Enter Your Name" /></td>
+
+            </tr>
+            <tr>
+                <td>Username:</td>
+                <td><input type="text" name="Username" class="form-control" placeholder="Enter Username" /></td>
+
+            </tr>
+            <tr>
+
+                <td>Password:</td>
+                <td><input type="password" name="Password" class="form-control" placeholder="Enter Password" /></td>
+            </tr>
+            <tr>
+                <td>Phone:</td>
+                <td><input type="text" name="Phone" class="form-control" placeholder="Enter Phone Number" /></td>
+
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td><input type="email" name="Email" class="form-control" placeholder="Enter Email Address" /></td>
+
+            </tr>
+            <tr>
+                <td>Address:</td>
+                <td><input type="text" name="Address" class="form-control" placeholder="Enter Address" /></td>
+
+            </tr>
+            <tr>
+                <td>
+                    <input type="hidden" name="Role" value="employee" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="hidden" name="Status" value="Available" />
+                </td>
+            </tr>
+
+
+            <tr>
+                <td></td>
+                <td align="right"><input type="submit" name="submit" class="btn btn-success" value="Register" /></td>
+            </tr>
+        </table>
+
+
+    </form>
+</center>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="86fbb2a520524d43a81f1ff19c274058" Name="Diagram1" ZoomLevel="119">
+        <EntityTypeShape EntityType="ZeroHungerDBV2Model.Assignment" Width="1.5" PointX="7.5" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZeroHungerDBV2Model.DistributionRecord" Width="1.5" PointX="10.5" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZeroHungerDBV2Model.Request" Width="1.5" PointX="5.25" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZeroHungerDBV2Model.Restaurant" Width="1.5" PointX="3" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZeroHungerDBV2Model.User" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
+        <AssociationConnector Association="ZeroHungerDBV2Model.FK_Assignments_Requests" ManuallyRouted="false" />
+        <AssociationConnector Association="ZeroHungerDBV2Model.FK_Assignments_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="ZeroHungerDBV2Model.FK_DistributionRecords_Requests" ManuallyRouted="false" />
+        <AssociationConnector Association="ZeroHungerDBV2Model.FK_DistributionRecords_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="ZeroHungerDBV2Model.FK_Requests_Restaurants" ManuallyRouted="false" />
+        <AssociationConnector Association="ZeroHungerDBV2Model.FK_Restaurants_Users" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
