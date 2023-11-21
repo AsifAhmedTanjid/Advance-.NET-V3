@@ -1,0 +1,31 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>_OuterLayout</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div>
+        <a class="btn btn-primary" href="/Admin/dashboard">Home</a>
+        <a class="btn btn-primary" href="/Category/Category">Categories</a>
+        <a class="btn btn-primary" href="/Product/Product">Products</a>
+        <a class="btn btn-primary" href="/Admin/Orders">All Orders</a>
+       
+
+    </div>
+    <div>
+        @RenderBody()
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

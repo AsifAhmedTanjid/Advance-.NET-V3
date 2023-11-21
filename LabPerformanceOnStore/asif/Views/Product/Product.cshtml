@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Product";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Product</h2>
+<h2>@Session["userid"]</h2>
+<h2>@Session["username"]</h2>
+
+<a class="btn btn-primary" href="/product/createproduct">Create</a>
+<table class="table table-bordered">
+
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Category</th>
+        <th>Description</th>
+        <th>Quantity</th>
+        <th>Action</th>
+    </tr>
+    @foreach (var p in Model)
+    {
+        <tr text-align: center;>
+            <td>@p.Id</td>
+            <td>@p.Name</td>
+            <td>@p.Price</td>
+            <td>@p.Category.Name</td>
+            <td>@p.Description</td>
+            <td>@p.Quantity</td>
+            <td> <a href="/Product/editproduct/@p.Id" class="btn btn-primary">Edit</a> <a href="/product/deleteProduct/@p.Id" class="btn btn-danger">Delete</a></td>
+        </tr>
+    }
+</table>

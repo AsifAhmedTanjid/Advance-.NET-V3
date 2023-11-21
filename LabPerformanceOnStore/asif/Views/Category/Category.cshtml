@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Category";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Category</h2>
+
+<a class="btn btn-primary" href="/category/createcategory">Create</a>
+<table class="table table-bordered">
+
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Action</th>
+    </tr>
+    @foreach (var c in Model)
+    {
+        <tr text-align: center;>
+            <td>@c.Id</td>
+            <td>@c.Name</td>
+
+            <td> <a href="/category/editcategory/@c.Id" class="btn btn-primary">Edit</a> <a href="/category/deletecategory/@c.Id" class="btn btn-danger">Delete</a></td>
+        </tr>
+    }
+</table>

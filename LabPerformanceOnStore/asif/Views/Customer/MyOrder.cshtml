@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "MyOrder";
+    Layout = "~/Views/Shared/_CustomerLayout.cshtml";
+}
+
+<h2>MyOrder</h2>
+
+<table class="table table-bordered">
+
+    <tr>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Status</th>
+    </tr>
+    @foreach (var p in Model)
+    {
+        <tr text-align: center;>
+
+            <td>@p.Product.Name</td>
+            <td>@p.Quantity</td>
+            <td>@p.Price</td>
+            <td>@p.Status</td>
+
+            
+        </tr>
+    }
+</table>
+
+<a href="/customer/cancelorder" class="btn btn-danger">Cancel Order</a>

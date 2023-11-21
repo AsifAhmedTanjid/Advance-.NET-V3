@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "ProductList";
+    Layout = "~/Views/Shared/_CustomerLayout.cshtml";
+}
+
+<h2>ProductList</h2>
+
+
+<table class="table table-bordered">
+
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Category</th>
+        <th>Description</th>
+        <th>Action</th>
+    </tr>
+    @foreach (var p in Model)
+    {
+        <tr text-align: center;>
+            <td>@p.Name</td>
+            <td>@p.Price</td>
+            <td>@p.Category.Name</td>
+            <td>@p.Description</td>
+            <td> <a href="/Customer/addtocart/@p.Id" class="btn btn-primary">Add to Cart</a>
+        </tr>
+    }
+</table>

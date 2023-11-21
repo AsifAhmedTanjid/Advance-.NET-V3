@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "EditProduct";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>EditProduct</h2>
+
+<form action="" method="post">
+    <input type="hidden" name="Id" class="form-control" value="@Model.Id" />
+    <input type="text" name="Name" class="form-control" value="@Model.Name" />
+    <input type="text" name="Price" class="form-control" value="@Model.Price" />
+
+    <select class="form-control" name="CategoryId">
+        <option selected value="@Model.Category.Id">@Model.Category.Name</option>
+        @foreach (var c in ViewBag.Categories)
+        {
+            <option value="@c.Id">@c.Name</option>
+        }
+    </select>
+    <input type="text" name="Description" class="form-control" value="@Model.Description" />
+    <input type="number" name="Quantity" class="form-control" value="@Model.Quantity" />
+
+    <input type="submit" value="Update" class="btn btn-warning" />
+</form>

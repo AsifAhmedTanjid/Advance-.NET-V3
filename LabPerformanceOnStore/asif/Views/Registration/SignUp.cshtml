@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "SignUp";
+    Layout = "~/Views/Shared/OuterRegistrationLayout.cshtml";
+}
+
+<h2>SignUp</h2>
+
+
+<form action="" method="post">
+    <input type="text" name="UserName" class="form-control" placeholder="Username" />
+    <input type="password" name="Password" class="form-control" placeholder="Password" />
+    <input type="text" name="Name" class="form-control" placeholder="Name" />
+    <input type="hidden" name="Role" class="form-control" value="customer" />
+    <input type="text" name="Address" class="form-control" placeholder="Address" />
+    <input type="text" name="Phone" class="form-control" placeholder="Phone" />
+    <input type="submit" name="submit" class="btn btn-success" value="Register" />
+</form>
+
