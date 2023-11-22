@@ -97,7 +97,8 @@ namespace ZeroHungerV2.Controllers
                         return RedirectToAction("Dashboard", "Restaurant");
                     }
 
-                    
+                    return RedirectToAction("AddRestaurant", "Restaurant");
+
 
                 }
 
@@ -105,6 +106,59 @@ namespace ZeroHungerV2.Controllers
 
             return RedirectToAction("SignUp","Registration");
         }
+
+
+
+
+
+
+
+
+
+        [HttpGet]
+        public ActionResult SignUpAsDonor()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult SignUpAsDonor(UserDTO u)
+        {
+
+            if (ModelState.IsValid)
+            {
+
+                var config = new MapperConfiguration(cfg =>
+                {
+                    cfg.CreateMap<UserDTO, User>();
+                });
+                var mapper = new Mapper(config);
+                var data = mapper.Map<User>(u);
+
+                var db = new ZeroHungerDBV2Entities();
+                db.Users.Add(data);
+                db.SaveChanges();
+
+                return RedirectToAction("Login");
+            }
+            return View(u);
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

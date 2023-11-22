@@ -1,0 +1,29 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+</head>
+<body>
+
+    <form action="" method="post">
+
+       
+        <input type="text" name="RestaurantName" class="form-control" placeholder="Restaurant Name" />
+        <input type="text" name="RestaurantLocation" class="form-control" placeholder="Location" />
+        <input type="text" name="RestaurantContactPerson" class="form-control" placeholder="Contact Person" />
+        <input type="text" name="RestaurantContactNumber" class="form-control" placeholder="Contact Number" />
+        <input type="email" name="RestaurantEmail" class="form-control" placeholder="Email Address" />
+        <input type="hidden" name="RestaurantOwnerID" value="@Session["id"]" />
+
+        <input type="submit" name="submit" class="btn btn-success" value="Add" />
+    </form>
+
+
+</body>
+</html>

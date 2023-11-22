@@ -13,6 +13,7 @@
         <th>Request Name</th>
         <th>Request Time</th>
         <th>Max Preservation Time</th>
+        <th>Food Details</th>
         <th>Status</th>
         <th>Action</th>
 
@@ -24,6 +25,7 @@
             <td>@cr.Restaurant.RestaurantName</td>
             <td>@cr.RequestTime</td>
             <td>@cr.MaxPreservationTime</td>
+            <td>@cr.FoodDetails</td>
             <td>@cr.Status</td>
             <td> <a href="/Admin/AssignEmployee/@cr.RequestID" class="btn btn-primary">Accept Request</a> <a href="/Admin/RejectRequest/@cr.RequestID" class="btn btn-danger">Reject</a></td>
 

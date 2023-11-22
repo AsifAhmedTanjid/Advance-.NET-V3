@@ -16,6 +16,7 @@
         <th>Contact Person</th>
         <th>Contact Number</th>
         <th>Email</th>
+        <th>Food Details</th>
         <th>Action</th>
     </tr>
     @foreach (var a in Model)
@@ -30,6 +31,7 @@
            
             <td>@a.Request.Restaurant.RestaurantContactPerson</td>
             <td>@a.Request.Restaurant.RestaurantContactNumber</td>
+            <td>@a.Request.FoodDetails</td>
             <td>@a.Request.Restaurant.RestaurantEmail</td>
             <td> <a href="/employee/Distributed/@a.AssignmentID" class="btn btn-primary">Distributed</a> </td>
 

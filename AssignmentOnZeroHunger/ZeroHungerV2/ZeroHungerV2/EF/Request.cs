@@ -26,6 +26,7 @@ namespace ZeroHungerV2.EF
         public System.DateTime RequestTime { get; set; }
         public System.DateTime MaxPreservationTime { get; set; }
         public string Status { get; set; }
+        public string FoodDetails { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Assignment> Assignments { get; set; }

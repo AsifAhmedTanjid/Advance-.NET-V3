@@ -12,6 +12,7 @@
         <th>Restaurant Name</th>
         <th>Location</th>
         <th>Status </th>
+        <th>Food Details </th>
         <th>Distibuted at</th>
     </tr>
     @foreach (var dr in Model)
@@ -20,6 +21,7 @@
             <td>@dr.Request.Restaurant.RestaurantName</td>
             <td>@dr.Request.Restaurant.RestaurantLocation</td>
             <td>@dr.Status</td>
+            <td>@dr.Request.FoodDetails</td>
             <td>@dr.DistributionTime</td>
 
 

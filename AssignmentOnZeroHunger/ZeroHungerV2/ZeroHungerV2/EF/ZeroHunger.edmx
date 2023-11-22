@@ -34,6 +34,7 @@
           <Property Name="RequestTime" Type="datetime" Nullable="false" />
           <Property Name="MaxPreservationTime" Type="datetime" Nullable="false" />
           <Property Name="Status" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FoodDetails" Type="varchar" MaxLength="500" />
         </EntityType>
         <EntityType Name="Restaurants">
           <Key>
@@ -204,6 +205,7 @@
           <NavigationProperty Name="Assignments" Relationship="Self.FK_Assignments_Requests" FromRole="Requests" ToRole="Assignments" />
           <NavigationProperty Name="DistributionRecords" Relationship="Self.FK_DistributionRecords_Requests" FromRole="Requests" ToRole="DistributionRecords" />
           <NavigationProperty Name="Restaurant" Relationship="Self.FK_Requests_Restaurants" FromRole="Requests" ToRole="Restaurants" />
+          <Property Name="FoodDetails" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Restaurant">
           <Key>
@@ -370,6 +372,7 @@
           <EntitySetMapping Name="Requests">
             <EntityTypeMapping TypeName="ZeroHungerDBV2Model.Request">
               <MappingFragment StoreEntitySet="Requests">
+                <ScalarProperty Name="FoodDetails" ColumnName="FoodDetails" />
                 <ScalarProperty Name="RequestID" ColumnName="RequestID" />
                 <ScalarProperty Name="RestaurantID" ColumnName="RestaurantID" />
                 <ScalarProperty Name="RequestTime" ColumnName="RequestTime" />

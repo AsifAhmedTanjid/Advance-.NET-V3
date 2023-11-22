@@ -26,6 +26,7 @@
     <EntitySetMapping Name="Requests">
       <EntityTypeMapping TypeName="ZeroHungerDBV2Model.Request">
         <MappingFragment StoreEntitySet="Requests">
+          <ScalarProperty Name="FoodDetails" ColumnName="FoodDetails" />
           <ScalarProperty Name="RequestID" ColumnName="RequestID" />
           <ScalarProperty Name="RestaurantID" ColumnName="RestaurantID" />
           <ScalarProperty Name="RequestTime" ColumnName="RequestTime" />

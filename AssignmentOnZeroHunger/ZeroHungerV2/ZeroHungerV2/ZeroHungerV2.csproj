@@ -266,6 +266,8 @@
     <Content Include="Views\Admin\ShowAllRestaurants.cshtml" />
     <Content Include="Views\Admin\ShowAllEmployees.cshtml" />
     <Content Include="Views\Restaurant\DonateHistory.cshtml" />
+    <Content Include="Views\Registration\SignUpAsDonor.cshtml" />
+    <Content Include="Views\Restaurant\AddRestaurant.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -29,6 +29,7 @@
     <Property Name="RequestTime" Type="datetime" Nullable="false" />
     <Property Name="MaxPreservationTime" Type="datetime" Nullable="false" />
     <Property Name="Status" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FoodDetails" Type="varchar" MaxLength="500" />
   </EntityType>
   <EntityType Name="Restaurants">
     <Key>

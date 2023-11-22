@@ -36,6 +36,7 @@
     <NavigationProperty Name="Assignments" Relationship="Self.FK_Assignments_Requests" FromRole="Requests" ToRole="Assignments" />
     <NavigationProperty Name="DistributionRecords" Relationship="Self.FK_DistributionRecords_Requests" FromRole="Requests" ToRole="DistributionRecords" />
     <NavigationProperty Name="Restaurant" Relationship="Self.FK_Requests_Restaurants" FromRole="Requests" ToRole="Restaurants" />
+    <Property Name="FoodDetails" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="Restaurant">
     <Key>

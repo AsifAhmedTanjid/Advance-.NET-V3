@@ -79,5 +79,74 @@ namespace ZeroHungerV2.Controllers
 
             return View(data);
         }
+
+
+
+
+
+
+
+
+
+
+
+        [Logged]
+        [HttpGet]
+        public ActionResult AddRestaurant()
+        {
+            return View();
+        }
+        [HttpPost]
+
+        public ActionResult AddRestaurant(RestaurantDTO res)
+        {
+
+
+            if (ModelState.IsValid)
+            {
+
+                var config = new MapperConfiguration(cfg =>
+                {
+                    cfg.CreateMap<RestaurantDTO, Restaurant>();
+                });
+                var mapper = new Mapper(config);
+                var data = mapper.Map<Restaurant>(res);
+
+                var db = new ZeroHungerDBV2Entities();
+                db.Restaurants.Add(data);
+                db.SaveChanges();
+
+                return RedirectToAction("RedirectRestaurant");
+            }
+            return View(res);
+        }
+
+        public ActionResult RedirectRestaurant()
+        {
+            var id = Convert.ToInt32(Session["id"]);
+            var db = new ZeroHungerDBV2Entities();
+            var resdata = (from r in db.Restaurants
+                           where r.RestaurantOwnerID == id
+                           select r).SingleOrDefault();
+            if (resdata != null)
+            {
+                Session["restaurantid"] = resdata.RestaurantID;
+                Session["restaurantname"] = resdata.RestaurantName;
+                Session["restaurantlocation"] = resdata.RestaurantLocation;
+                Session["restaurantcontactperson"] = resdata.RestaurantContactPerson;
+                Session["restaurantcontactnumber"] = resdata.RestaurantContactNumber;
+                Session["restaurantemail"] = resdata.RestaurantEmail;
+                Session["restaurantownerid"] = resdata.RestaurantOwnerID;
+
+
+                return RedirectToAction("Dashboard");
+            }
+
+            return RedirectToAction("AddRestaurant", "Restaurant");
+        }
+
+
+
+
     }
 }
