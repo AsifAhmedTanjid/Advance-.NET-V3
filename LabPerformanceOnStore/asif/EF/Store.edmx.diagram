@@ -4,17 +4,19 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="7436c174a36543c7bf009b6cae257c0e" Name="Diagram1">
-        <EntityTypeShape EntityType="StoreModel.Cart" Width="1.5" PointX="5.25" PointY="2.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="StoreModel.Category" Width="1.5" PointX="0.75" PointY="3.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="StoreModel.Order" Width="1.5" PointX="8.25" PointY="2.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="StoreModel.Product" Width="1.5" PointX="3" PointY="2.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="StoreModel.User" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />
-        <AssociationConnector Association="StoreModel.FK_Carts_Products" ManuallyRouted="false" />
-        <AssociationConnector Association="StoreModel.FK_Carts_Users" ManuallyRouted="false" />
-        <AssociationConnector Association="StoreModel.FK_Products_Categories" ManuallyRouted="false" />
-        <AssociationConnector Association="StoreModel.FK_Orders_Products" ManuallyRouted="false" />
-        <AssociationConnector Association="StoreModel.FK_Orders_Users" ManuallyRouted="false" />
+      <Diagram DiagramId="0565a6e128fe431fba742321b56bbf2f" Name="Diagram1">
+        <EntityTypeShape EntityType="StoreV2Model.Cart" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoreV2Model.Category" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoreV2Model.OrderDetail" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoreV2Model.Order" Width="1.5" PointX="3" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoreV2Model.Product" Width="1.5" PointX="3" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoreV2Model.User" Width="1.5" PointX="3" PointY="10.5" IsExpanded="true" />
+        <AssociationConnector Association="StoreV2Model.FK_Carts_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="StoreV2Model.FK_Carts_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="StoreV2Model.FK_Products_Categories" ManuallyRouted="false" />
+        <AssociationConnector Association="StoreV2Model.FK_OrderDetails_Orders" ManuallyRouted="false" />
+        <AssociationConnector Association="StoreV2Model.FK_OrderDetails_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="StoreV2Model.FK_Orders_Users" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

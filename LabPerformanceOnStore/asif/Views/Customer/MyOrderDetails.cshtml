@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "MyOrderDetails";
+    Layout = "~/Views/Shared/_CustomerLayout.cshtml";
+}
+
+<h2>MyOrderDetails</h2>
+
+<table class="table table-bordered">
+
+    <tr>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        
+    </tr>
+    @foreach (var p in Model)
+    {
+        <tr text-align: center;>
+
+            <td>@p.Product.Name</td>
+            <td>@p.Quantity</td>
+            <td>@p.Price</td>
+            
+
+
+        </tr>
+        
+    }
+</table>
+

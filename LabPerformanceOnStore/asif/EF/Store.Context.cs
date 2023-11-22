@@ -13,10 +13,10 @@ namespace asif.EF
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class StoreEntities : DbContext
+    public partial class StoreV2Entities : DbContext
     {
-        public StoreEntities()
-            : base("name=StoreEntities")
+        public StoreV2Entities()
+            : base("name=StoreV2Entities")
         {
         }
     
@@ -27,6 +27,7 @@ namespace asif.EF
     
         public virtual DbSet<Cart> Carts { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
+        public virtual DbSet<OrderDetail> OrderDetails { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<User> Users { get; set; }

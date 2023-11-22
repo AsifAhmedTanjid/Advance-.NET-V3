@@ -10,9 +10,7 @@
     <tr>
         <th>ID</th>
         <th> Customer Name</th>
-        <th> Product Name</th>
-        <th>Ammount</th>
-        <th>Quantity</th>
+      
         <th>Status</th>
         <th>Action</th>
     </tr>
@@ -20,10 +18,7 @@
     {
         <tr text-align: center;>
             <td>@p.Id</td>
-            <td>@p.User.Name</td>
-            <td>@p.Product.Name</td>
-            <td>@p.Price</td>
-            <td>@p.Quantity</td>
+            <td>@p.User.Name</td>  
             <td>@p.Status</td>
             <td>  <a href="/admin/ManageOrder/@p.Id?status=Process" class="btn btn-success">Process</a>  <a href="/admin/ManageOrder/@p.Id?status=Decline" class="btn btn-danger">Decline</a></td>
         </tr>

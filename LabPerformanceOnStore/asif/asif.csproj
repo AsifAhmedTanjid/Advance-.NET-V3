@@ -143,6 +143,9 @@
     <Compile Include="EF\Order.cs">
       <DependentUpon>Store.tt</DependentUpon>
     </Compile>
+    <Compile Include="EF\OrderDetail.cs">
+      <DependentUpon>Store.tt</DependentUpon>
+    </Compile>
     <Compile Include="EF\Product.cs">
       <DependentUpon>Store.tt</DependentUpon>
     </Compile>
@@ -238,6 +241,7 @@
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Views\Admin\Dashboard.cshtml" />
     <Content Include="Views\Admin\Orders.cshtml" />
+    <Content Include="Views\Customer\MyOrderDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

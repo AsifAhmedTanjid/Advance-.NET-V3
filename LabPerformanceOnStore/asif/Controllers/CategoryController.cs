@@ -11,7 +11,7 @@ namespace asif.Controllers
     {
         public ActionResult Category()
         {
-            var db = new StoreEntities();
+            var db = new StoreV2Entities();
             var data = db.Categories.ToList();
 
             return View(data);
@@ -24,14 +24,14 @@ namespace asif.Controllers
         [HttpGet]
         public ActionResult CreateCategory()
         {
-            var db = new StoreEntities();
+            var db = new StoreV2Entities();
             return View();
         }
         [HttpPost]
         public ActionResult CreateCategory(Category c)
         {
 
-            var db = new StoreEntities();
+            var db = new StoreV2Entities();
             db.Categories.Add(c);
             db.SaveChanges();
             return RedirectToAction("Category");
@@ -41,7 +41,7 @@ namespace asif.Controllers
 
         public ActionResult DeleteCategory(int id)
         {
-            var db = new StoreEntities();
+            var db = new StoreV2Entities();
             var data = db.Categories.Find(id);
             db.Categories.Remove(data);
             db.SaveChanges();
@@ -50,7 +50,7 @@ namespace asif.Controllers
 
         public ActionResult EditCategory(int id)
         {
-            var db = new StoreEntities();
+            var db = new StoreV2Entities();
             var data = (from c in db.Categories
                         where c.Id == id
                         select c).SingleOrDefault();
@@ -60,7 +60,7 @@ namespace asif.Controllers
         [HttpPost]
         public ActionResult EditCategory(Category c)
         {
-            var db = new StoreEntities();
+            var db = new StoreV2Entities();
             var data = db.Categories.Find(c.Id);
             data.Name = c.Name;
             db.SaveChanges();

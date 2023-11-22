@@ -11,7 +11,7 @@ namespace asif.Controllers
     {
         public ActionResult Product()
         {
-            var db = new StoreEntities();
+            var db = new StoreV2Entities();
             var data = db.Products.ToList();
 
             return View(data);
@@ -24,7 +24,7 @@ namespace asif.Controllers
         [HttpGet]
         public ActionResult CreateProduct()
         {
-            var db = new StoreEntities();
+            var db = new StoreV2Entities();
             ViewBag.Categories = db.Categories.ToList();
             return View();
         }
@@ -32,7 +32,7 @@ namespace asif.Controllers
         public ActionResult CreateProduct(Product p)
         {
 
-            var db = new StoreEntities();
+            var db = new StoreV2Entities();
             db.Products.Add(p);
             db.SaveChanges();
             return RedirectToAction("Product");
@@ -42,7 +42,7 @@ namespace asif.Controllers
 
         public ActionResult DeleteProduct(int id)
         {
-            var db = new StoreEntities();
+            var db = new StoreV2Entities();
             var data = db.Products.Find(id);
             db.Products.Remove(data);
             db.SaveChanges();
@@ -55,7 +55,7 @@ namespace asif.Controllers
         [HttpGet]
         public ActionResult EditProduct(int id)
         {
-            var db = new StoreEntities();
+            var db = new StoreV2Entities();
             ViewBag.Categories = db.Categories.ToList();
             var data = (from p in db.Products
                         where p.Id == id
@@ -66,7 +66,7 @@ namespace asif.Controllers
         [HttpPost]
         public ActionResult EditProduct(Product p)
         {
-            var db = new StoreEntities();
+            var db = new StoreV2Entities();
             var data = db.Products.Find(p.Id);
             data.Name = p.Name;
             data.Price = p.Price;

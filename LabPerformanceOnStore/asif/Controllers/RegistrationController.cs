@@ -18,7 +18,7 @@ namespace asif.Controllers
         [HttpPost]
         public ActionResult SignUp(User u)
         {
-            var db = new StoreEntities();
+            var db = new StoreV2Entities();
             db.Users.Add(u);
             db.SaveChanges();
             return RedirectToAction("Login");
@@ -32,7 +32,7 @@ namespace asif.Controllers
         [HttpPost]
         public ActionResult Login(User u)
         {   
-            var db = new StoreEntities();
+            var db = new StoreV2Entities();
             var data = (from us in db.Users
                         where us.UserName == u.UserName && us.Password == u.Password
                         select us).SingleOrDefault();

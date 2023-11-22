@@ -12,7 +12,7 @@ namespace asif.Controllers
         // GET: Store
         public ActionResult Product()
         {
-            var db = new StoreEntities();
+            var db = new StoreV2Entities();
             var data = db.Products.ToList();
 
             return View(data);
@@ -20,7 +20,7 @@ namespace asif.Controllers
 
         public ActionResult Category()
         {
-            var db = new StoreEntities();
+            var db = new StoreV2Entities();
             var data = db.Categories.ToList();
 
             return View(data);
@@ -31,7 +31,7 @@ namespace asif.Controllers
         [HttpGet]
         public ActionResult CreateProduct()
         {
-            var db = new StoreEntities();
+            var db = new StoreV2Entities();
             ViewBag.Categories = db.Categories.ToList();
             return View();
         }
@@ -39,7 +39,7 @@ namespace asif.Controllers
         public ActionResult CreateProduct(Product p)
         {
 
-            var db = new StoreEntities();
+            var db = new StoreV2Entities();
             db.Products.Add(p);
             db.SaveChanges();
             return RedirectToAction("Product");
@@ -49,7 +49,7 @@ namespace asif.Controllers
 
         public ActionResult DeleteProduct(int id)
         {
-            var db = new StoreEntities();
+            var db = new StoreV2Entities();
             var data = db.Products.Find(id);
             db.Products.Remove(data);
             db.SaveChanges();
@@ -62,7 +62,7 @@ namespace asif.Controllers
         [HttpGet]
         public ActionResult EditProduct(int id)
         {
-            var db = new StoreEntities();
+            var db = new StoreV2Entities();
             ViewBag.Categories = db.Categories.ToList();
             var data = (from p in db.Products
                         where p.Id == id
@@ -73,7 +73,7 @@ namespace asif.Controllers
         [HttpPost]
         public ActionResult EditProduct(Product p)
         {
-            var db = new StoreEntities();
+            var db = new StoreV2Entities();
             var data = db.Products.Find(p.Id);
             data.Name = p.Name;
             data.Price = p.Price;
@@ -90,14 +90,14 @@ namespace asif.Controllers
         [HttpGet]
         public ActionResult CreateCategory()
         {
-            var db = new StoreEntities();
+            var db = new StoreV2Entities();
             return View();
         }
         [HttpPost]
         public ActionResult CreateCategory(Category c)
         {
 
-            var db = new StoreEntities();
+            var db = new StoreV2Entities();
             db.Categories.Add(c);
             db.SaveChanges();
             return RedirectToAction("Category");
@@ -107,7 +107,7 @@ namespace asif.Controllers
 
         public ActionResult DeleteCategory(int id)
         {
-            var db = new StoreEntities();
+            var db = new StoreV2Entities();
             var data = db.Categories.Find(id);
             db.Categories.Remove(data);
             db.SaveChanges();
@@ -116,7 +116,7 @@ namespace asif.Controllers
 
         public ActionResult EditCategory(int id)
         {
-            var db = new StoreEntities();
+            var db = new StoreV2Entities();
             var data = (from c in db.Categories
                         where c.Id == id
                         select c).SingleOrDefault();
@@ -126,7 +126,7 @@ namespace asif.Controllers
         [HttpPost]
         public ActionResult EditCategory(Category c)
         {
-            var db = new StoreEntities();
+            var db = new StoreV2Entities();
             var data = db.Categories.Find(c.Id);
             data.Name = c.Name;
             db.SaveChanges();

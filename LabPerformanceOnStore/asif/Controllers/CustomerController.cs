@@ -19,14 +19,14 @@ namespace asif.Controllers
         public ActionResult ProductList()
         {
 
-            var db = new StoreEntities();
+            var db = new StoreV2Entities();
             var data = db.Products.ToList();
             return View(data);
         }
 
         public ActionResult AddToCart(int id)
         {
-            var db = new StoreEntities();
+            var db = new StoreV2Entities();
             var data = (from p in db.Products
                         where p.Id == id
                         select p).SingleOrDefault();
@@ -46,7 +46,7 @@ namespace asif.Controllers
         }
         public ActionResult Cart()
         {   var id= Convert.ToInt32(Session["userid"]);
-            var db = new StoreEntities();
+            var db = new StoreV2Entities();
             var data = (from c in db.Carts
                         where c.CustomerId == id
                         select c).ToList();
@@ -56,7 +56,7 @@ namespace asif.Controllers
         public ActionResult ClearCart()
         {
             var id = Convert.ToInt32(Session["userid"]);
-            var db = new StoreEntities();
+            var db = new StoreV2Entities();
             var data = (from c in db.Carts
                         where c.CustomerId == id
                         select c).ToList();
@@ -67,7 +67,7 @@ namespace asif.Controllers
 
         public ActionResult DeleteCart(int id)
         {
-            var db = new StoreEntities();
+            var db = new StoreV2Entities();
             var data = db.Carts.Find(id);
             db.Carts.Remove(data);
             db.SaveChanges();
@@ -77,24 +77,32 @@ namespace asif.Controllers
         public ActionResult PlaceOrder()
         {
             var id = Convert.ToInt32(Session["userid"]);
-            var db = new StoreEntities();
+            var db = new StoreV2Entities();
             var data = (from c in db.Carts
                         where c.CustomerId == id
                         select c).ToList();
+            Order order = new Order
+            {
+                CustomerId = Convert.ToInt32(Session["userid"]),
+                Status = "Ordered"
+
+            };
+            db.Orders.Add(order);
             foreach (var c in data) {
 
-                Order order = new Order
+                OrderDetail orderdetails = new OrderDetail
                 {
-                    CustomerId = Convert.ToInt32(Session["userid"]),
+                    OrderId = order.Id,
                     ProductId = c.ProductId,
                     Quantity = 1,
                     Price = c.Price,
-                    Status = "Ordered"
+                   
 
                 };
-                db.Orders.Add(order);
+                db.OrderDetails.Add(orderdetails);
               
             }
+
 
 
             db.SaveChanges();
@@ -107,21 +115,39 @@ namespace asif.Controllers
         public ActionResult MyOrder()
         {
             var id = Convert.ToInt32(Session["userid"]);
-            var db = new StoreEntities();
+            var db = new StoreV2Entities();
             var data = (from c in db.Orders
                         where c.CustomerId == id
                         select c).ToList();
+          
             return View(data);
         }
 
-        public ActionResult CancelOrder()
+      
+        public ActionResult MyOrderDetails(int id)
         {
-            var id = Convert.ToInt32(Session["userid"]);
-            var db = new StoreEntities();
-            var data = (from c in db.Orders
-                        where c.CustomerId == id
+            
+            var db = new StoreV2Entities();
+
+            var data = (from od in db.OrderDetails
+                         where od.OrderId == id
+                         select od).ToList();
+            return View(data);
+        }
+
+
+        
+        public ActionResult CancelOrder(int id)
+        {
+           
+            var db = new StoreV2Entities();
+            var data = (from c in db.OrderDetails
+                        where c.OrderId == id
                         select c).ToList();
-            db.Orders.RemoveRange(data);
+            db.OrderDetails.RemoveRange(data);
+            db.SaveChanges();
+            var data2 = db.Orders.Find(id);
+            db.Orders.Remove(data2);
             db.SaveChanges();
             return RedirectToAction("MyOrder");
         }

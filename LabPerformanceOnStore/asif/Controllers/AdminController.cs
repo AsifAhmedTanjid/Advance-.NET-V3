@@ -16,7 +16,7 @@ namespace asif.Controllers
         }
         public ActionResult Orders()
         {
-            var db = new StoreEntities();
+            var db = new StoreV2Entities();
             var data = db.Orders.ToList();
 
             return View(data);
@@ -24,7 +24,7 @@ namespace asif.Controllers
 
         public ActionResult ManageOrder(int id,string status)
         {
-            var db = new StoreEntities();
+            var db = new StoreV2Entities();
             var data = (from p in db.Orders
                         where p.Id == id
                         select p).SingleOrDefault();
