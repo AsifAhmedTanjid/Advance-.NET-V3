@@ -1,8 +1,10 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ZeroHungerV2.DTOs;
 using ZeroHungerV2.EF;
 
 namespace ZeroHungerV2.Controllers
@@ -16,12 +18,26 @@ namespace ZeroHungerV2.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult SignUp(User u)
+        public ActionResult SignUp(UserDTO u)
         {
-            var db = new ZeroHungerDBV2Entities();
-            db.Users.Add(u);
-            db.SaveChanges();
-            return RedirectToAction("Login");
+
+            if (ModelState.IsValid)
+            {
+
+                var config = new MapperConfiguration(cfg =>
+                {
+                    cfg.CreateMap<UserDTO, User>();
+                });
+                var mapper = new Mapper(config);
+                var data = mapper.Map<User>(u);
+
+                var db = new ZeroHungerDBV2Entities();
+                db.Users.Add(data);
+                db.SaveChanges();
+
+                return RedirectToAction("Login");
+            }
+            return View(u);
 
         }
         [HttpGet]
@@ -88,6 +104,21 @@ namespace ZeroHungerV2.Controllers
             }
 
             return RedirectToAction("SignUp","Registration");
+        }
+
+
+
+
+        public ActionResult Logout()
+        {
+            
+            Session.Clear();
+
+        
+            Session.Abandon();
+
+           
+            return RedirectToAction("Login"); 
         }
 
     }

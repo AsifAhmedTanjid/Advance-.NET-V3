@@ -45,6 +45,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=10.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.10.0.0\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -125,6 +128,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Annotations\UniqueEmail.cs" />
+    <Compile Include="Annotations\UniquePhone.cs" />
+    <Compile Include="Annotations\UniqueUsername.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -133,6 +139,11 @@
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\RegistrationController.cs" />
     <Compile Include="Controllers\RestaurantController.cs" />
+    <Compile Include="DTOs\AssignmentDTO.cs" />
+    <Compile Include="DTOs\DistributionRecordDTO.cs" />
+    <Compile Include="DTOs\RequestDTO.cs" />
+    <Compile Include="DTOs\RestaurantDTO.cs" />
+    <Compile Include="DTOs\UserDTO.cs" />
     <Compile Include="EF\Assignment.cs">
       <DependentUpon>ZeroHunger.tt</DependentUpon>
     </Compile>
@@ -257,7 +268,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="DTOs\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
