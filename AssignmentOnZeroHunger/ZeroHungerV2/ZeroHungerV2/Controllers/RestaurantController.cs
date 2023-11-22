@@ -1,9 +1,11 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using ZeroHungerV2.Auth;
+using ZeroHungerV2.DTOs;
 using ZeroHungerV2.EF;
 
 namespace ZeroHungerV2.Controllers
@@ -24,12 +26,27 @@ namespace ZeroHungerV2.Controllers
         }
         [HttpPost]
 
-        public ActionResult CreateNewRequest(Request request)
+        public ActionResult CreateNewRequest(RequestDTO request)
         {
-            var db = new ZeroHungerDBV2Entities();
-            db.Requests.Add(request);
-            db.SaveChanges();
-            return RedirectToAction("PendingRequest");
+          
+
+            if (ModelState.IsValid)
+            {
+
+                var config = new MapperConfiguration(cfg =>
+                {
+                    cfg.CreateMap<RequestDTO, Request>();
+                });
+                var mapper = new Mapper(config);
+                var data = mapper.Map<Request>(request);
+
+                var db = new ZeroHungerDBV2Entities();
+                db.Requests.Add(data);
+                db.SaveChanges();
+
+                return RedirectToAction("PendingRequest");
+            }
+            return View(request);
         }
         [Logged]
         public ActionResult PendingRequest()

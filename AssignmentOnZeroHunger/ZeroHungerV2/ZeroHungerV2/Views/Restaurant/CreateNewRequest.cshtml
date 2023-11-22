@@ -10,8 +10,10 @@
 
     <input type="hidden" name="RestaurantID" class="form-control" value="@Session["restaurantid"]" />
     <input type="hidden" name="RequestTime" class="form-control" value="@DateTime.Now" />
+
     <label>Max Preservation Time:</label>
     <input type="datetime-local" name="MaxPreservationTime" />
+    <span class="text-danger"><i>@Html.ValidationMessage("MaxPreservationTime")</i></span>
     <input type="hidden" name="Status" class="form-control" value="Requested" />
     <input type="submit" name="submit" class="btn btn-success" value="Add" />
 </form>

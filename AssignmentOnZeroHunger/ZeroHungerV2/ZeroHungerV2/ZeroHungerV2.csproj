@@ -128,6 +128,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Annotations\GreaterTime.cs" />
     <Compile Include="Annotations\UniqueEmail.cs" />
     <Compile Include="Annotations\UniquePhone.cs" />
     <Compile Include="Annotations\UniqueUsername.cs" />

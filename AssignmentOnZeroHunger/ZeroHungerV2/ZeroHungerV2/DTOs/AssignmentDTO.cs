@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using ZeroHungerV2.Annotations;
 
 namespace ZeroHungerV2.DTOs
 {
@@ -10,6 +11,7 @@ namespace ZeroHungerV2.DTOs
         public int AssignmentID { get; set; }
         public int RequestID { get; set; }
         public int EmployeeID { get; set; }
+        
         public System.DateTime AssignmentTime { get; set; }
         public string Status { get; set; }
     }
