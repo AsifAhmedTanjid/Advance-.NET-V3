@@ -1,0 +1,9 @@
+D:\AIUB COURSE NOTES\SEM 10\Adv.NET-Final\API Practice\APIAppLayer\BLL\bin\Debug\BLL.dll
+D:\AIUB COURSE NOTES\SEM 10\Adv.NET-Final\API Practice\APIAppLayer\BLL\bin\Debug\BLL.pdb
+D:\AIUB COURSE NOTES\SEM 10\Adv.NET-Final\API Practice\APIAppLayer\BLL\bin\Debug\DAL.dll
+D:\AIUB COURSE NOTES\SEM 10\Adv.NET-Final\API Practice\APIAppLayer\BLL\bin\Debug\DAL.pdb
+D:\AIUB COURSE NOTES\SEM 10\Adv.NET-Final\API Practice\APIAppLayer\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+D:\AIUB COURSE NOTES\SEM 10\Adv.NET-Final\API Practice\APIAppLayer\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+D:\AIUB COURSE NOTES\SEM 10\Adv.NET-Final\API Practice\APIAppLayer\BLL\obj\Debug\BLL.csproj.CopyComplete
+D:\AIUB COURSE NOTES\SEM 10\Adv.NET-Final\API Practice\APIAppLayer\BLL\obj\Debug\BLL.dll
+D:\AIUB COURSE NOTES\SEM 10\Adv.NET-Final\API Practice\APIAppLayer\BLL\obj\Debug\BLL.pdb
